@@ -1,0 +1,40 @@
+version: '3.8'
+ 
+services:
+  php:
+    image: wodby/php:latest
+    volumes:
+      - './html/:/var/www/html'
+ 
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - './html/:/var/www/html'
+      - './docker/nginx:/etc/nginx/conf.d'
+    depends_on:
+      - php
+     
+  thewall:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: '${DB_SCHEMA_NAME}'
+      MYSQL_USER: '${DB_USERNAME}'
+      MYSQL_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_ROOT_PASSWORD: '${DB_ROOT_PASSWORD}'
+    ports:
+      - 3356:3306
+    volumes:
+    - ./docker/sql/:/docker-entrypoint-initdb.d
+ 
+  phpmyadmin:
+    image: phpmyadmin:latest
+    ports:
+      - "8805:80"
+    environment:
+      PMA_HOST: '${DB_HOST}'
+      PMA_USER: '${DB_USERNAME}'
+      PMA_PASSWORD: '${DB_PASSWORD}'
+    depends_on:
+      - thewall

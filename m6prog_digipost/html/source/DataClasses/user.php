@@ -14,7 +14,6 @@ class User
         $this->username = $username;
     }
 
-    // haal alle user op
      
     public static function GetAllUsers(): array 
     {
@@ -37,7 +36,6 @@ class User
         return $users;
     }
 
-    // haal user op via id
     public static function GetUserById(int $id): ?User 
     {
         global $connection;

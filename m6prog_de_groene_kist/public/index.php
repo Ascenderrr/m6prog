@@ -16,13 +16,14 @@ if (empty($page) || $page === 'index.php') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>De Groene Kist</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/main.js" defer></script>
 </head>
 <body>
     <div class="container">
         <?php include '../source/views/navigation.php'; ?>
         
         <?php 
-        $allowed_pages = ['home', 'groente', 'fruit', 'contact', 'aanbiedingen'];
+        $allowed_pages = ['home', 'groente', 'fruit', 'contact', 'aanbiedingen', 'login'];
         $pages_dir = '../source/pages/';
 
         if ($page === 'home') {

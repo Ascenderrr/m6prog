@@ -14,6 +14,7 @@ include_once __DIR__ . '/../dataclasses/groenekistdb.php';
             <li><a href="/fruit">Fruit</a></li>
             <li><a href="/aanbiedingen">Aanbiedingen</a></li>
             <li><a href="/contact">Contact</a></li>
+            <li><a href="/login" class="login-link">Inloggen</a></li>
         </ul>
     </nav>
 </header>

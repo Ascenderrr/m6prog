@@ -18,7 +18,7 @@ class Bericht
 
     public static function GetAllBerichten(): array 
     {
-        global $connection;
+        gl  obal $connection;
         $berichten = [];
         
         $query = "SELECT idbericht, bericht_inhoud, User_idUser FROM Bericht";

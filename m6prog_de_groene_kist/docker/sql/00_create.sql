@@ -3,14 +3,16 @@
 -- Model: New Model    Version: 1.0
 -- MySQL Workbench Forward Engineering
 
+USE groenekist;
+ 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
-
+ 
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-
+ 
 -- -----------------------------------------------------
 -- Table `login`
 -- -----------------------------------------------------
@@ -20,8 +22,8 @@ CREATE TABLE IF NOT EXISTS `login` (
   `password` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idlogin`))
 ENGINE = InnoDB;
-
-
+ 
+ 
 -- -----------------------------------------------------
 -- Table `klant`
 -- -----------------------------------------------------
@@ -39,8 +41,8 @@ CREATE TABLE IF NOT EXISTS `klant` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-
+ 
+ 
 -- -----------------------------------------------------
 -- Table `product`
 -- -----------------------------------------------------
@@ -48,10 +50,10 @@ CREATE TABLE IF NOT EXISTS `product` (
   `idproduct` INT NOT NULL AUTO_INCREMENT,
   `naam` VARCHAR(45) NOT NULL,
   `prijs` DECIMAL NOT NULL,
-  PRIMARY KEY (`idproduct`))i j
+  PRIMARY KEY (`idproduct`))
 ENGINE = InnoDB;
-
-
+ 
+ 
 -- -----------------------------------------------------
 -- Table `aanbiedingen`
 -- -----------------------------------------------------
@@ -67,8 +69,8 @@ CREATE TABLE IF NOT EXISTS `aanbiedingen` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-
+ 
+ 
 -- -----------------------------------------------------
 -- Table `klant_has_product`
 -- -----------------------------------------------------
@@ -89,8 +91,8 @@ CREATE TABLE IF NOT EXISTS `klant_has_product` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-
+ 
+ 
 -- -----------------------------------------------------
 -- Table `product_type`
 -- -----------------------------------------------------
@@ -107,8 +109,8 @@ CREATE TABLE IF NOT EXISTS `product_type` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-
+ 
+ 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

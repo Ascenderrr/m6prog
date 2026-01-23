@@ -23,7 +23,7 @@ $users = getAllUsers();
                     <p><?php echo ($user->bericht); ?></p>
                 </div>
             </article>
-            <?php endforeach; ?>
+            <?php endforeach; ?>    
             </section>
 </body>
 </html>
